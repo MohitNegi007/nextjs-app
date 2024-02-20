@@ -49,3 +49,7 @@ jobs:
             echo "Build failed! Exiting..."
             exit 1
           fi
+
+      - name: Prevent pushing on failure
+        if: steps.verify_build.outputs.build_success != 'true'
+        run: exit 1
