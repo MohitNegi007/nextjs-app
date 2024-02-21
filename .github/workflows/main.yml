@@ -44,7 +44,10 @@ jobs:
         run: |
           if [ $? -eq 0 ] && [ -d ".next" ]; then
             echo "Build successful!"
+          cd /home/mohit/nextapp/_work/nextjs-app/nextjs-app  
+          pm2 restart 0  
           else
             echo "Build failed! Exiting..."
             exit 1
           fi
+       
